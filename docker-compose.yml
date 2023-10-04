@@ -1,0 +1,38 @@
+version: '3'
+services:
+  reto-container:
+    build:
+      args:
+        DB_HOST: mariadb-container
+        DB_PORT: 3306
+        DB_DATABASE: retopicamysql
+        DB_USERNAME: retopica
+        DB_PASSWORD: 1q2w3e4r
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8003:80"
+    depends_on:
+      - mariadb-container
+    container_name: reto-container
+    networks:
+      - red-pica
+
+  mariadb-container:
+    build:
+      context: ./MariaDB
+      dockerfile: Dockerfile
+    environment:
+      - MYSQL_ROOT_PASSWORD=1q2w3e4r
+      - MYSQL_DATABASE=retopicamysql
+      - MYSQL_USER=retopica
+      - MYSQL_PASSWORD=1q2w3e4r
+    container_name: mariadb-container
+    networks:
+      - red-pica
+
+networks:
+  red-pica:
+    driver: bridge

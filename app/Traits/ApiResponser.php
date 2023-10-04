@@ -17,11 +17,7 @@ trait ApiResponser
      */
     public function successResponse($data, $code = Response::HTTP_OK)
     {
-        $datosLog = [
-            "code" => $code,
-            "data" => $data,
-        ];
-        Log::channel('ejecucion')->info('Ejecución satisfactoria', $datosLog);
+        Log::channel('ejecucion')->info('Ejecución satisfactoria');
         return response()->json([
             'data' => $data,
         ], $code);
