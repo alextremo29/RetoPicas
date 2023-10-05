@@ -24,15 +24,19 @@ sudo docker-compose up -d
 
 ### /
 **Method HTTP:**  GET
+
 **Description:** this endpoint is a "Health Check"
 
 ### /users
 **Method HTTP:**  GET
+
 **Description:** this endpoint get all users in the database
 
 ### /
 **Method HTTP:**  POST
+
 **Description:** Insert new user to the database
+
 **Body type:** form-data
 
 ## About Laravel
