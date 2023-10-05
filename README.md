@@ -7,6 +7,34 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Install Application
+To install the application run the following commands:
+
+**1. build container images:**
+~~~
+sudo docker-compose build
+~~~
+
+**2. up container images:**
+~~~
+sudo docker-compose up -d
+~~~
+
+## API Endpoints
+
+### /
+**Method HTTP:**  GET
+**Description:** this endpoint is a "Health Check"
+
+### /users
+**Method HTTP:**  GET
+**Description:** this endpoint get all users in the database
+
+### /
+**Method HTTP:**  POST
+**Description:** Insert new user to the database
+**Body type:** form-data
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
